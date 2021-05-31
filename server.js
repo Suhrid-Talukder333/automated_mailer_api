@@ -17,6 +17,7 @@ server.post("/", (req, res) => {
   name = person_name;
   email = person_email;
   text = person_text;
+  console.log(name, email, text);
   main().catch(console.error);
   res.json({
     check: true,
