@@ -17,7 +17,6 @@ server.post("/", (req, res) => {
   name = person_name;
   email = person_email;
   text = person_text;
-  console.log(name, email, text);
   main().catch(console.error);
   res.json({
     check: true,
@@ -44,6 +43,6 @@ const main = async () => {
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 };
 
-server.listen(3001, () => {
-  console.log(`The server is running at port 3001`);
+server.listen(process.env.PORT || 3001, () => {
+  console.log(`The server is running at port ${process.env.PORT}`);
 });
